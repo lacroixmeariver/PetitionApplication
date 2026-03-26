@@ -1,8 +1,193 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    /* removing margin + padding so the 
+    navbar goes all the way to the edge */
+    margin: 0px;
+    padding: 0px;
+    background-color: #F3F3F3;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+    font-weight: 600;
+}
+
+.page-content-box {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+    background-color: #444444;
+    color: white;
+}
+
+.navbar-link{
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.page-content-card {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: darkgray 0px 2px 8px 2px;
+}
+
+.petition-header {
+    color: #153285;
+    margin: 15px 5px 0px 5px;
+}
+
+.petition-content-box{
+    display: flex;
+    gap: 30px;
+    margin: 5px 5px 15px 5px;
+    padding: 5px 15px 15px 15px;
+    align-items: start;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.petition-description {
+    text-align: justify;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+}
+
+#frozen-img {
+    border-radius: 3%;
+    width: 225px;
+    margin-top: 5px;
+}
+
+.petition-form-header{
+    color: #B40E0E;
+    margin-bottom: 0;
+}
+
+.petition-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+#typeUserSelect, .form-control {
+    width: auto;
+}
+
+.form-select, .petition-form input, textarea{ 
+    font-family: serif;
+    font-size: large;
+}
+
+.petition-form input, .petition-form textarea, .form-select {
+    padding: 8px 10px 8px 10px;
+    margin: 8px 20px 8px 20px;
+    border: #E1E5E8 2px solid;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: white;
+    display: block;
+}
+#typeUserSelect {
+    color: #6B6D70;
+}
+
+.subOptions {
+    padding: 20px 10px 20px 10px;
+    margin: 8px 20px 8px 20px;
+    border-left: 4px solid #0D6EFD;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: rgba(169, 195, 247, 0.376);
+}
+
+.subOptions label {
+    font-weight: bold;
+}
+
+.subOptions input, .subOptions select {
+    padding: 8px 10px 8px 10px;
+    margin: 10px 0px 15px 0px;
+    width: 99%;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.subOptions .form-control, .subOptions select{
+    margin-top: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#leaveComment {
+    height: 75px;
+    
+    resize: none;
+}
+
+.submit-button {
+    background-color: #0D6EFD;
+    color: white;
+    font-size: large;
+    padding: 8px;
+    margin: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.signatures-header {
+    color: #B40E0E;
+    margin-bottom: 5px;
+}
+
+.signature-table {
+    align-self: stretch;
+    text-align: left;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 20px 50px 20px;
+}
+
+.signature-table th {
+    border: lightgray 1px solid;
+    padding: 10px;
+}
+
+.signature-table td {
+    border: lightgray 1px solid;
+    padding: 10px;
+}
+
+.signature-table tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+.signature-table tbody tr:nth-child(odd) {
+    background-color: #F2F2F2;
+}
+
+hr {
+    width: 95%;
+    background-color: black;
+}
+
+.error-msg {
+    margin: 0px 0px 0px 25px;
+    color: darkred;
 }

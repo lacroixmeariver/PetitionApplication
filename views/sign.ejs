@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title that appears in the tab above -->
+     <title><%= title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+
+<!-- content of the page -->
+<body>
+    <!-- navigation bar -->
+    <nav class="navbar ">
+        <div class="navbar-link">Home</div>
+        <div class="navbar-link">About</div>
+        <div class="navbar-link">Categories</div>
+        <div class="navbar-link">Contact</div>
+    </nav>
+
+    <!-- box containing page content box -->
+    <div class="page-content-box">
+
+        <div class="page-content-card">
+        <!-- petition header -->
+        <h1 class="petition-header">Move CPTS 489 to Afternoon in Winter!</h1>
+
+        <!-- container for the image and petition paragraph -->
+        <div class="petition-content-box">
+            <div class="petition-description">
+            The image you see on the right is a representation of our professor every morning, right before his much-needed coffee that helps thaw him out a bit.
+            Imagine having to wake up at 4 or 5 AM in the dead of winter just to prepare for class. Technically, since the sun hasn’t even risen yet, can we really 
+            call 4 AM "morning"? The frigid cold, combined with the mental fog of early hours, is an unfair battle both for students and faculty alike. No one should
+            have to endure sub-zero temperatures just to attend an 8 AM lecture. Morning brain freeze inevitably leads to null pointer exceptions in our heads! 
+            For these reasons, we humbly request the administration to consider shifting CPTS 489 to a more humane afternoon time slot.
+            </div>  
+
+            <!-- image -->
+            <img id="frozen-img" src="/images/frozen.jpg" alt="">
+        </div>
+
+        <!-- header for the petition form -->
+        <h1 class="petition-form-header">Sign the Petition</h1>
+        
+        <!-- form for petition signer info -->
+        <form class="petition-form" id="petitionForm" action="GET">
+            <!-- basic info -->
+            <input class="form-control" type="text" id="name" placeholder="Your Name">
+            <input class="form-control" type="text" id="email" placeholder="Your Email">
+            <input class="form-control" type="text" id="city" placeholder="City">
+            <input class="form-control" type="text" id="state" placeholder="State (e.g., WA)">
+            
+            <!-- type of signer -->
+            <select autocomplete="off" class="form-select" id="typeUserSelect">
+                <option value="" selected>-- I am a ... --</option>
+                <option value="Student">Student</option>
+                <option value="Faculty">Faculty/Staff</option>
+                <option value="Military">Military/Veteran</option>
+                <option value="Professional">Industry Professional</option>
+                <option value="Other">Other</option>
+            </select>
+           
+            <!-- student sub-options -->
+            <div id="studentSuboptions" class="hidden subOptions">
+                <label for="studentSuboptions">What is your academic level?</label>
+                
+                <select class="form-select subOptionSelect" name="studentSuboptions" id="academicLevel">
+                    <option value="">-- Select --</option>
+                    <option value="Freshman">Freshman</option>
+                    <option value="Sophomore">Sophomore</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Graduate">Graduate</option>
+                </select>
+                
+                <div>
+                    <label for="">What is your major?</label>
+                    <input class="form-control" type="text" name="" id="" placeholder="e.g., Computer Science">
+                </div>
+            
+            </div>
+
+            <!-- faculty sub-options -->
+            <div id="facultySuboptions" class="hidden subOptions">
+                <label for="facultySuboptions">Your Role:</label>
+                <select class="form-select subOptionSelect" name="facultySuboptions" id="facultyRole">
+                    <option value="">-- Select --</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Instructor">Instructor</option>
+                    <option value="TA">TA</option>
+                    <option value="Administrative">Administrative</option>
+                    <option value="Research">Research</option>
+                </select>
+                
+                <div>
+                    <label for="">Department:</label>
+                    <input class="form-control" type="text" placeholder="e.g., School of EECS" name="" id="">
+                </div>
+            </div>
+
+            <!-- military sub-options -->
+            <div id="militarySuboptions" class="hidden subOptions">
+                <label for="militaryBranchSuboptions">Branch of service:</label>
+                <select class="form-select subOptionSelect" name="militaryBranchSuboptions" id="militaryBranch">
+                    <option value="">-- Select --</option>
+                    <option value="Army">Army</option>
+                    <option value="Navy">Navy</option>
+                    <option value="Air Force">Air Force</option>
+                    <option value="Marines">Marines</option>
+                    <option value="Coast Guard">Coast Guard</option>
+                    <option value="Space Force">Space Force</option>
+                </select>
+                
+                <label for="militaryDutySuboptions">Status:</label>
+                <select class="form-select subOptionSelect" name="militaryDutySuboptions" id="militaryStatus">
+                    <option value="">-- Select --</option>
+                    <option value="Active">Active Duty</option>
+                    <option value="Veteran">Veteran</option>
+                    <option value="Reserve">Reservist</option>
+                </select>
+                
+            
+            </div>
+
+            <!-- professional sub-options -->
+            <div id="professionalSuboptions" class="hidden subOptions">
+                <label for="professionalSuboptions">Your industry sector:</label>
+                
+                <select class="form-select subOptionSelect" name="professionalSuboptions" id="professionalSector">
+                    <option value="">-- Select --</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Software">Software</option>
+                    <option value="Business">Business</option>
+                    <option value="Healthcare">Healthcare</option>
+                </select>
+                
+                <div>
+                    <label for="">Company Name (optional):</label>
+                    <input class="form-control" type="text" name="" id="">
+                </div>
+            
+            </div>
+
+            <!-- other sub-options -->
+            <div id="otherSuboptions" class="hidden subOptions">
+                <label for="">Please describe your affiliation:</label>
+                <input class="form-control" type="text" placeholder="Tell us a bit about yourself" name="" id="">
+            
+            </div>
+            <textarea type="text" name="leaveComment" id="leaveComment" placeholder="Leave a comment (optional)"></textarea>
+
+            <!-- error messages -->
+            <span class="error-msg" id="nameError">Name must be at least 5 characters in length.</span>
+            <span class="error-msg" id="emailError">Please enter a valid email.</span>
+            <span class="error-msg" id="cityError">City name cannot be empty.</span>
+            <span class="error-msg" id="stateError">State must be only 2 characters.</span>
+            <span class="error-msg" id="signerTypeError">Please select a signer type.</span>
+            <span class="error-msg" id="academicLevelError">Please select an academic level.</span>
+            <span class="error-msg" id="facultyRoleError">Please select an administrative role.</span>
+            <span class="error-msg" id="branchError">Please select a miliary branch.</span>
+            <span class="error-msg" id="statusError">Please select a military service status.</span>
+            <span class="error-msg" id="industryError">Please select an industry sector.</span>
+            <span class="error-msg" id="defaultError">Please fill out the fields and select your signer type.</span>
+
+           <!-- button to submit form info -->
+           <button type="submit" class="submit-button">Sign Petition</button>
+
+        </form>
+
+       <hr>
+        
+        <!-- header for the signatures table -->
+        <h1 class="signatures-header">Signatures</h1>
+
+        <!-- signature table -->
+        <!-- <table class="signature-table">
+            <thead>
+                <tr> 
+                    <th scope="col">Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice Johnson</td> 
+                    <td>Seattle</td>
+                    <td>WA</td>
+                    <td><a href="#" class="more-link" data-index="0">More</a></td>
+                </tr>
+                <tr>
+                    <td>Bob Smith</td>
+                    <td>Portland</td>
+                    <td>OR</td>
+                    <td><a href="#" class="more-link" data-index="1">More</a></td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <table class="signature-table">
+            
+            <thead>
+                <tr>
+                    <% for( let index = 0; index < headers.length; index++ ) { %>
+                        <th scope="col"><%= headers[index] %></th>
+                    <% } %>
+                </tr>
+            </thead>
+            
+            <tbody>
+                
+                <% signers.forEach(element => { %>
+                    <tr>
+                        <td><%= element.name %></td>
+                        <td><%= element.city %></td>
+                        <td><%= element.state %></td>
+                        <td><%= element.details %></td>
+                    </tr>
+                <% }) %>
+                
+            </tbody>
+        </table>
+        
+
+    </div>
+
+    <!-- more info modal -->
+    <div class="modal fade" id="signatureModal" tabindex="-1" aria-labelledby="signatureModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signatureModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body" id="modalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <script src="/javascripts/signForm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
