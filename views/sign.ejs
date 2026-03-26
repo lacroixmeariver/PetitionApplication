@@ -44,15 +44,15 @@
         <h1 class="petition-form-header">Sign the Petition</h1>
         
         <!-- form for petition signer info -->
-        <form class="petition-form" id="petitionForm" action="GET">
+        <form class="petition-form" id="petitionForm" method="POST" action="/sign">
             <!-- basic info -->
-            <input class="form-control" type="text" id="name" placeholder="Your Name">
-            <input class="form-control" type="text" id="email" placeholder="Your Email">
-            <input class="form-control" type="text" id="city" placeholder="City">
-            <input class="form-control" type="text" id="state" placeholder="State (e.g., WA)">
+            <input class="form-control" type="text" name="name" id="name" placeholder="Your Name">
+            <input class="form-control" type="text" name="email" id="email" placeholder="Your Email">
+            <input class="form-control" type="text" name="city" id="city" placeholder="City">
+            <input class="form-control" type="text" name="state" id="state" placeholder="State (e.g., WA)">
             
             <!-- type of signer -->
-            <select autocomplete="off" class="form-select" id="typeUserSelect">
+            <select autocomplete="off" class="form-select" name="typeUserSelect" id="typeUserSelect">
                 <option value="" selected>-- I am a ... --</option>
                 <option value="Student">Student</option>
                 <option value="Faculty">Faculty/Staff</option>
@@ -76,7 +76,7 @@
                 
                 <div>
                     <label for="">What is your major?</label>
-                    <input class="form-control" type="text" name="" id="" placeholder="e.g., Computer Science">
+                    <input class="form-control" type="text" name="studentConditionalInfo" id="" placeholder="e.g., Computer Science">
                 </div>
             
             </div>
@@ -95,7 +95,7 @@
                 
                 <div>
                     <label for="">Department:</label>
-                    <input class="form-control" type="text" placeholder="e.g., School of EECS" name="" id="">
+                    <input class="form-control" type="text" placeholder="e.g., School of EECS" name="facultyConditionalInfo" id="">
                 </div>
             </div>
 
@@ -137,7 +137,7 @@
                 
                 <div>
                     <label for="">Company Name (optional):</label>
-                    <input class="form-control" type="text" name="" id="">
+                    <input class="form-control" type="text" name="professionalConditionalInfo" id="">
                 </div>
             
             </div>
@@ -145,7 +145,7 @@
             <!-- other sub-options -->
             <div id="otherSuboptions" class="hidden subOptions">
                 <label for="">Please describe your affiliation:</label>
-                <input class="form-control" type="text" placeholder="Tell us a bit about yourself" name="" id="">
+                <input class="form-control" type="text" placeholder="Tell us a bit about yourself" name="otherTextInput" id="">
             
             </div>
             <textarea type="text" name="leaveComment" id="leaveComment" placeholder="Leave a comment (optional)"></textarea>
@@ -232,7 +232,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="signatureModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
                 <div class="modal-body" id="modalBody">
